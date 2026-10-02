@@ -11,7 +11,7 @@
 <style>
 :root{--bg:#070a08;--fg:#f2f4ef;--ac:#d9b34a;--ac2:#8fa36a;--pn:rgba(15,20,17,.94);--ln:#344034;--mu:#9aa49a;box-sizing:border-box}
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;background:#050705;color:var(--fg);font-family:Tahoma,"Segoe UI",system-ui,sans-serif;overflow:hidden;overscroll-behavior:none}
+html,body{height:100%;margin:0;background:#050705;color:var(--fg);font-family:Tahoma,"Segoe UI",system-ui,sans-serif;overflow:auto;overscroll-behavior:auto}
 body{user-select:none;-webkit-user-select:none}
 button,input{font:inherit;color:var(--fg)}
 button{background:#151b16;border:1px solid #3b473a;border-radius:4px;padding:10px 12px;cursor:pointer;transition:.16s}
@@ -24,7 +24,7 @@ canvas{display:block;width:100%;height:100%;cursor:none;touch-action:none}
 #menu{position:fixed;inset:0;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;background:
 linear-gradient(90deg,rgba(3,5,4,.86) 0%,rgba(3,5,4,.55) 45%,rgba(3,5,4,.22) 100%),
 radial-gradient(ellipse at 70% 25%,rgba(96,111,64,.28),transparent 48%),
-linear-gradient(135deg,#11180f,#050706 72%);padding:0;overflow:hidden;text-align:right;z-index:10}
+linear-gradient(135deg,#11180f,#050706 72%);padding:0;overflow:auto;text-align:right;z-index:10}
 #menu:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:38px 38px;pointer-events:none}
 .menuTop{position:relative;display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1px solid rgba(255,255,255,.08);min-height:82px}
 .brand{font:900 38px Impact,"Arial Black",sans-serif;letter-spacing:3px;direction:ltr;text-shadow:0 4px 18px #000}
@@ -34,7 +34,7 @@ linear-gradient(135deg,#11180f,#050706 72%);padding:0;overflow:hidden;text-align
 .xpMini{min-width:180px}.xpMini b{font-size:13px}.xpMini small{color:#9ba69b}
 .xpBar{height:7px;background:#080b09;border:1px solid #303a2f;margin-top:4px}.xpBar i{display:block;height:100%;background:linear-gradient(90deg,#b58b2e,#e8d078)}
 .menuBody{position:relative;display:flex;min-height:0;flex:1}
-.modeRail{width:min(360px,42vw);padding:22px 22px 22px 0;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.modeRail{width:min(360px,42vw);padding:22px 22px 22px 0;display:flex;flex-direction:column;gap:8px;overflow:visible}
 .railLabel{font-size:11px;color:#7f8b80;letter-spacing:2px;margin:0 0 5px 4px}
 .modeBtn{position:relative;min-height:76px;width:100%;border:1px solid #394438;background:#111711;text-align:right;overflow:hidden;padding:12px 15px;border-radius:3px}
 .modeBtn:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,6,4,.9),rgba(4,6,4,.28));pointer-events:none}
@@ -69,7 +69,7 @@ linear-gradient(135deg,#11180f,#050706 72%);padding:0;overflow:hidden;text-align
 #authPanel{display:none;position:fixed;inset:0;z-index:40;background:rgba(2,4,3,.96);align-items:center;justify-content:center}
 .authCard{width:min(430px,92vw);background:#0e140f;border:1px solid #3c493a;padding:24px;border-radius:5px;box-shadow:0 25px 80px #000}
 .authCard h2{color:var(--ac);margin:0 0 5px}.authCard p{color:#899489;font-size:12px;margin:0 0 15px}.authCard input{width:100%;margin:4px 0}.authCard .row{display:flex;gap:7px;margin-top:9px}
-#accountPanel{display:none;position:fixed;inset:0;z-index:25;background:rgba(4,7,5,.97);padding:25px;overflow:hidden}
+#accountPanel{display:none;position:fixed;inset:0;z-index:25;background:rgba(4,7,5,.97);padding:25px;overflow:auto}
 .accountGrid{width:min(900px,94vw);margin:auto;display:grid;grid-template-columns:220px 1fr;gap:15px}
 .profileBox,.storeBox{background:#0d130e;border:1px solid #344032;padding:18px;border-radius:4px}
 .profileBig{width:110px;height:110px;margin:auto;background:linear-gradient(145deg,#9aa86d,#293324);display:grid;place-items:center;font-size:38px;font-weight:900;border:2px solid #59644e}
