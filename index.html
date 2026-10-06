@@ -89,7 +89,7 @@ kbd{background:var(--pn);border:1px solid var(--ln);border-radius:4px;padding:1p
 .ov{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(5,8,12,.9);padding:12px}
 .ov .box{background:var(--pn);border:1px solid var(--ln);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;align-items:stretch;min-width:min(320px,86vw);max-width:94vw;max-height:94vh;overflow:auto;text-align:center}
 .ov input{font:inherit;color:var(--fg);background:#0e1219;border:1px solid var(--ln);border-radius:6px;padding:9px;text-align:center}.ov input:focus{outline:none;border-color:var(--ac)}
-#pause{z-index:70}#mapsel{z-index:65}#auth{z-index:120}
+#acct,#shop{z-index:68}#pause{z-index:70}#mapsel{z-index:65}#auth{z-index:120}
 .tabs{display:flex;gap:6px}.tabs button{flex:1}.tabs .on{background:var(--ac);color:#111;border-color:var(--ac)}
 #aM{min-height:18px;font-size:13px;line-height:1.7}#aM.er{color:#ff8a8a}#aM.ok{color:#7ee2a0}
 #msL{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
@@ -99,12 +99,24 @@ kbd{background:var(--pn);border:1px solid var(--ln);border-radius:4px;padding:1p
 .cd.onl{min-height:104px;border-color:#2fbf5f;box-shadow:0 0 14px rgba(47,191,95,.35);animation:gl 2.4s ease-in-out infinite}
 .cd.onl b{font-size:19px}.cd.onl .tg{background:#1fae4f;color:#fff}
 @keyframes gl{50%{box-shadow:0 0 24px rgba(47,191,95,.7)}}
-#kit{z-index:66}#wps{display:none}.krow{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}.krow button{padding:5px 9px;font-size:12px}.krow .on{background:var(--ac);color:#111;border-color:var(--ac)}.ov small{color:#9aa6ba}#kT{font-size:30px;font-weight:bold;color:var(--ac)}
+#kit{z-index:66}#prof{display:flex;gap:8px;align-items:center;font-size:12px;direction:rtl}.xb{width:90px;height:7px;background:#1b2230;border-radius:4px;overflow:hidden;display:inline-block}.xb i{display:block;height:100%;background:var(--ac)}#left{background:linear-gradient(115deg,rgba(255,255,255,.03) 0 1px,transparent 1px 22px),radial-gradient(90% 120% at 0 0,rgba(240,160,32,.10),transparent 60%)}
+#left h1{font-size:46px;letter-spacing:5px;text-shadow:0 0 22px rgba(240,160,32,.35)}
+#acc{align-self:flex-start;margin:2px 0 0 4px}#acc .chip{display:flex;gap:8px;align-items:center;padding:4px 10px 4px 6px;border-radius:30px;background:rgba(20,26,38,.85);direction:rtl}
+#acc .av{width:30px;height:30px;border-radius:50%;background:var(--ac);color:#111;display:flex;align-items:center;justify-content:center;font-weight:bold}
+#acc .nm{display:flex;flex-direction:column;align-items:flex-start;font-size:12px;line-height:1.3}#acc .nm small{color:#9aa6ba}
+.tabs2{display:flex;flex:none;height:56px;padding:0 100px 0 8px;gap:4px;align-items:flex-end;direction:rtl}
+.tabs2 button{flex:1;border:0;border-bottom:3px solid transparent;border-radius:0;background:transparent;font-size:15px;font-weight:bold;color:#9aa6ba;padding:10px 4px}
+.tabs2 .on{color:var(--ac);border-bottom-color:var(--ac)}#tOn.on{color:#3ddc6a;border-bottom-color:#3ddc6a}
+#shM{color:var(--ac);font-weight:bold}.si{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--ln);border-radius:8px;direction:rtl}.si small{display:block}
+#shL{display:flex;flex-direction:column;gap:6px;max-height:55vh;overflow:auto}#acct #aL,#acct #aK{font-size:13px;line-height:1.8}
+#wps{display:none}.krow{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}.krow button{padding:5px 9px;font-size:12px}.krow .on{background:var(--ac);color:#111;border-color:var(--ac)}.ov small{color:#9aa6ba}#kT{font-size:30px;font-weight:bold;color:var(--ac)}
 </style></head><body>
 <button id="fsb" aria-label="فول اسکرین"><svg class="en" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><svg class="ex" viewBox="0 0 24 24"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button>
 <div id="intro"><div class="ph"></div><p>برای تجربه بهتر، گوشی را <b>افقی</b> کنید و <b>فول اسکرین</b> را بزنید.</p><button class="pri" id="introFs">ورود به فول اسکرین</button><button id="introGo">ادامه بدون فول اسکرین</button></div>
 <button id="pbt" aria-label="منو">&#9776;</button>
 <div id="kit" class="ov"><div class="box"><b id="kH">انتخاب کیت</b><small>کیت‌های ذخیره‌شده</small><div id="kS" class="krow"></div><small>پیستول</small><div id="kP" class="krow"></div><small>تفنگ بزرگ</small><div id="kL" class="krow"></div><small>نارنجک ۱</small><div id="kG0" class="krow"></div><small>نارنجک ۲</small><div id="kG1" class="krow"></div><div id="kT"></div><button id="kGo" class="pri2">شروع</button><button id="kX">بستن</button></div></div>
+<div id="acct" class="ov"><div class="box"><b id="aN"></b><small id="aE2"></small><div id="aL"></div><div id="aK"></div><button id="aS">فروشگاه</button><button id="aO">خروج از حساب</button><button id="aC">بستن</button></div></div>
+<div id="shop" class="ov"><div class="box"><b>فروشگاه</b><div id="shM"></div><div id="shL"></div><button id="shX">بستن</button></div></div>
 <div id="pause" class="ov"><div class="box"><b>مکث / خروج</b><p id="pTxt"></p><button id="pGo" class="pri2">ادامه بازی</button><button id="pQ">خروج از بازی</button></div></div>
 <div id="mapsel" class="ov"><div class="box"><b id="msT"></b><div id="msL"></div><button id="msX">بازگشت</button></div></div>
 <div id="auth" class="ov"><div class="box"><div class="tabs"><button id="tL" class="on">ورود</button><button id="tS">ثبت‌نام</button></div>
@@ -115,26 +127,23 @@ kbd{background:var(--pn);border:1px solid var(--ln);border-radius:4px;padding:1p
 <canvas id="c"></canvas>
 <div id="menu">
 <div id="left">
+<div id="acc"></div>
 <h1>FRONT<span>LINE</span></h1>
 <p class="tl">ترکیبی از CS و Call of Duty، با دید از بالا</p>
 <div id="res"></div>
 <div class="wk"><b>کارگاه تفنگ</b><canvas id="pv" width="280" height="100" style="width:280px;height:100px;cursor:default"></canvas><div id="wps" class="row"></div><div id="sk" class="row"></div><div id="at" class="row"></div><p>سلاح انتخابی در دث‌مچ‌ها با آن شروع می‌کنی؛ در بتل رویال وقتی برش داری اعمال می‌شود.</p></div>
-<div class="r2"><button id="kb">کیت‌ها</button><input id="pn" maxlength="12" autocomplete="off" aria-label="نام بازیکن" placeholder="نام بازیکن"><button id="dif" style="min-width:150px">سختی: آسان</button></div>
+<div class="r2"><button id="kb">کیت‌ها</button><button id="shb">فروشگاه</button><input id="pn" maxlength="12" autocomplete="off" aria-label="نام بازیکن" placeholder="نام بازیکن"><button id="dif" style="min-width:150px">سختی: آسان</button></div>
 <p class="h"><kbd>W A S D</kbd> حرکت · ماوس هدف‌گیری و شلیک · <kbd>R</kbd> ریلود · <kbd>1</kbd>–<kbd>5</kbd> تعویض سلاح · <kbd>Shift</kbd> دویدن · <kbd>Esc</kbd> منو<br>موبایل: جوی‌استیک چپ حرکت، جوی‌استیک راست نشانه‌گیری و شلیک.</p>
 </div>
 <div id="right">
-<div class="hd"><span>حالت‌های بازی</span><span id="acc"></span></div>
-<div id="list">
-<div class="sec on"><i></i>آنلاین · بازیکن‌های واقعی</div>
-<button class="cd onl" data-m="br" data-on="1"><span class="tg">ONLINE · ۲۰ نفر</span><b>بتل رویال</b><small>با بازیکن‌های واقعی؛ جاهای خالی با بات پر می‌شود</small></button>
+<div class="tabs2"><button id="tOn" class="on">آنلاین</button><button id="tOf">آفلاین</button></div>
+<div id="list"><div id="lOn"><button class="cd onl" data-m="br" data-on="1"><span class="tg">ONLINE · ۲۰ نفر</span><b>بتل رویال</b><small>با بازیکن‌های واقعی؛ جاهای خالی با بات پر می‌شود</small></button>
 <button class="cd onl" data-m="tdm" data-on="1"><span class="tg">ONLINE · ۱۰ نفر</span><b>دث‌مچ تیمی</b><small>۵ در برابر ۵ با بازیکن‌های واقعی</small></button>
 <button class="cd onl" data-m="dm" data-on="1"><span class="tg">ONLINE · ۸ نفر</span><b>دث‌مچ</b><small>همه‌علیه‌همه با بازیکن‌های واقعی</small></button>
-<div class="sec"><i></i>آفلاین</div>
-<button class="cd" data-m="br"><span class="tg">OFFLINE</span><b>بتل رویال</b><small>۳۰ نفر، چتر، زون کوچک‌شونده؛ با بات‌ها</small></button>
+<button class="cd onl" data-m="gg" data-on="1"><span class="tg">ONLINE · ۸ نفر</span><b>Gun Game</b><small>با هر کشته سلاحت عوض می‌شود</small></button></div><div id="lOf" style="display:none"><button class="cd" data-m="br"><span class="tg">OFFLINE</span><b>بتل رویال</b><small>۳۰ نفر، چتر، زون کوچک‌شونده؛ با بات‌ها</small></button>
 <button class="cd" data-m="dm"><span class="tg">OFFLINE</span><b>دث‌مچ</b><small>همه‌علیه‌همه، اولین نفر با ۲۵ کشته</small></button>
 <button class="cd" data-m="tdm"><span class="tg">OFFLINE</span><b>دث‌مچ تیمی</b><small>۵ در برابر ۵، تیم برنده با ۴۰ کشته</small></button>
-<button class="cd" data-m="gg"><span class="tg">OFFLINE</span><b>Gun Game</b><small>با هر کشته سلاحت عوض می‌شود</small></button>
-</div>
+<button class="cd" data-m="gg"><span class="tg">OFFLINE</span><b>Gun Game</b><small>با هر کشته سلاحت عوض می‌شود</small></button></div></div>
 </div>
 </div>
 <div id="lobby"><div id="lbS"></div><h2 id="lbT"></h2><div id="lbSt">در انتظار بازیکنان…</div><div id="lbC"></div><div id="lbBar"><div id="lbB"></div></div><div id="lbL"></div><div style="display:flex;gap:8px"><button id="lbGo" class="pri2" style="display:none">شروع الان</button><button id="lbX">لغو</button></div></div>
@@ -236,9 +245,9 @@ for(let i=0,k=Math.round(S*S/154000);i<k;i++){const q=fp(),r=R();M.L.push(r<.5?{
 $('menu').style.display='none';$('pbt').style.display='flex';
 try{if(o.mp&&navigator.wakeLock)navigator.wakeLock.request('screen').catch(()=>{})}catch(e){}}
 function nz(){const z=M.z,tr=Math.max(90,z.r*.62),a=R()*P2,d=rr(0,(z.r-tr)*.9);z.tx=cl(z.x+Math.cos(a)*d,tr,M.S-tr);z.ty=cl(z.y+Math.sin(a)*d,tr,M.S-tr);z.tr=tr}
-function lo(e){const m=M.mode;const bg=e.bot?BIG[Math.floor(R()*BIG.length)]:(BIG.includes(cs(e).w)?cs(e).w:2),pi=e.bot?0:(PIS.includes(cs(e).p)?cs(e).p:0);e.have=WP.map(()=>0);if(m=='gg')e.have[GG[e.lv]]=1;else{e.have[pi]=1;if(m!='br')e.have[bg]=1}
+function lo(e){const m=M.mode;const bg=e.bot?BIG[Math.floor(R()*BIG.length)]:(BIG.includes(cs(e).w)?cs(e).w:2),pi=e.bot?0:(PIS.includes(cs(e).p)?cs(e).p:0);e.have=WP.map(()=>0);if(m=='gg')e.have[GG[e.lv]]=1;else{e.have[pi]=1;if(m!='br'||e.hum)e.have[bg]=1}
 e.am=WP.map((w,i)=>mm(e,i));e.w=m=='gg'?GG[e.lv]:m=='br'?pi:bg;
-e.gr=e.bot||M.mp?null:(cs(e).g||['frag','smoke']).map(k=>({k,n:2}));e.hp=100;e.ar=0;e.rl=0;e.cd=.3;e.sp=1.5;e.alive=1;const q=fp();e.x=q.x;e.y=q.y;e.a=R()*P2;e.wp=null;e.tg=null}
+e.gr=e.bot?null:(cs(e).g||['frag','smoke']).map(k=>({k,n:2}));e.hp=100;e.ar=0;e.rl=0;e.cd=.3;e.sp=1.5;e.alive=1;const q=fp();e.x=q.x;e.y=q.y;e.a=R()*P2;e.wp=null;e.tg=null}
 function sw(e,i){if(e.have[i]&&e.w!=i){e.w=i;e.rl=0;e.cd=.2}}
 function reload(e){if(e.rl>0||e.am[e.w]>=mm(e,e.w))return;e.rl=WP[e.w].rl}
 function best(e){for(const i of PR)if(e.have[i]){e.w=i;e.rl=0;break}}
@@ -265,7 +274,7 @@ if(!k)return;by.k++;const m=M.mode;
 if(m=='tdm'){M.sc[by.team]++;if(M.sc[by.team]>=40)endM(h=>[h.team==by.team,`آبی ${M.sc[0]} - ${M.sc[1]} قرمز`])}
 if(m=='dm'&&by.k>=25)endM(h=>[h===by,`برنده: ${by.name} · کشته‌های تو: ${h.k}`]);
 if(m=='gg'){if(by.lv>=4)return endM(h=>[h===by,`برنده: ${by.name}`]);by.lv++;const w=GG[by.lv];by.have=WP.map(()=>0);by.have[w]=1;by.w=w;by.rl=0;by.am[w]=mm(by,w);by.hp=Math.min(100,by.hp+25)}}
-function menu(msg){const f=M&&(M.fin||M.res);M=null;netLeave();$('pause').style.display='none';$('pbt').style.display='none';$('res').textContent=msg!=null?msg:f?(f.won?'🏆 پیروزی! ':'💀 باختی. ')+f.txt:'';$('menu').style.display='flex'}
+function menu(msg){const f=M&&(M.fin||M.res);const gain=awardM();M=null;netLeave();$('pause').style.display='none';$('pbt').style.display='none';$('res').textContent=(msg!=null?msg:f?(f.won?'🏆 پیروزی! ':'💀 باختی. ')+f.txt:'')+gain;$('menu').style.display='flex'}
 // ---------- update
 function upd(dt){if(M.paused&&!M.mp)return;const m=M,z=m.z;m.t+=dt;gr(dt);
 for(const t of m.T)t.l-=dt;m.T=m.T.filter(t=>t.l>0);for(const f of m.F)f.t-=dt;m.F=m.F.filter(f=>f.t>0);
@@ -402,7 +411,7 @@ g.fillStyle='rgba(0,0,0,.25)';g.beginPath();g.ellipse(e.x+alt*70,e.y+alt*90,26,2
 g.save();g.translate(e.x,e.y);for(let k=0;k<8;k++){g.fillStyle=k%2?'#f2f2f2':e.col;g.beginPath();g.moveTo(0,0);g.arc(0,0,34,k*P2/8,(k+1)*P2/8);g.closePath();g.fill()}
 g.strokeStyle='rgba(0,0,0,.6)';g.lineWidth=2;g.beginPath();g.arc(0,0,34,0,P2);g.stroke();g.fillStyle='#14161a';g.beginPath();g.arc(0,0,5,0,P2);g.fill();g.restore()}
 fxd(m);g.restore()}
-function throwG(e,i){const q=e&&e.gr&&e.gr[i];if(!q||q.n<=0||!e.alive||e.air>0||!M||M.client||M.mp)return;q.n--;M.Gr.push({x:e.x,y:e.y,vx:Math.cos(e.a)*520,vy:Math.sin(e.a)*520,t:0,k:q.k,by:e})}
+function throwG(e,i){if(!M||!e)return;if(M.client){M.cq.push(['g',i]);M.inT=1;return}const q=e.gr&&e.gr[i];if(!q||q.n<=0||!e.alive||e.air>0)return;q.n--;M.Gr.push({x:e.x,y:e.y,vx:Math.cos(e.a)*520,vy:Math.sin(e.a)*520,t:0,k:q.k,by:e})}
 function gr(dt){const m=M;for(const q of m.Gr){q.t+=dt;if(q.t<.7){const nx=q.x+q.vx*dt,ny=q.y+q.vy*dt;if(hitW(nx,ny,5))q.t=.7;else{q.x=nx;q.y=ny}}if(q.t>=1.6&&!q.d){q.d=1;boom(q)}}
 m.Gr=m.Gr.filter(q=>!q.d);for(const f of m.Fx){f.t-=dt;if(f.k=='f'){f.tk=(f.tk||0)-dt;if(f.tk<=0){f.tk=.25;for(const e of m.E)if(e.alive&&Math.hypot(e.x-f.x,e.y-f.y)<f.r)hurt(e,5,f.by)}}}m.Fx=m.Fx.filter(f=>f.t>0)}
 function boom(q){const m=M;if(q.k=='smoke')m.Fx.push({k:'s',x:q.x,y:q.y,r:140,t:12,s:m.t});else if(q.k=='fire')m.Fx.push({k:'f',x:q.x,y:q.y,r:110,t:7,by:q.by});
@@ -456,21 +465,21 @@ tdm:[{id:'dust',n:'پایگاه کویری',th:'sand',S:2800,c:700,bp:.5,cp:.35}
 gg:[{id:'dust',n:'غبار',th:'sand',S:2000,c:500,bp:.5,cp:.35},{id:'yard',n:'انبار',th:'urban',S:2000,c:500,bp:.4,cp:.5},{id:'arctic',n:'قطب',th:'snow',S:2000,c:500,bp:.3,cp:.5}],
 br:[{id:'isle',n:'جزیره سبز',th:'grass',S:8400,c:600,bp:.45,cp:.3},{id:'sahara',n:'صحرای بزرگ',th:'sand',S:8400,c:600,bp:.4,cp:.35},{id:'tundra',n:'یخچال',th:'snow',S:8400,c:600,bp:.38,cp:.4}]};
 /* ===== online (WebRTC / PeerJS) ===== */
-const NETV='frontline1',TARGET={br:30,tdm:10,dm:8},MN={br:'بتل رویال',tdm:'دث‌مچ تیمی',dm:'دث‌مچ',gg:'Gun Game'};
+const NETV='frontline1',TARGET={br:30,tdm:10,dm:8,gg:8},MN={br:'بتل رویال',tdm:'دث‌مچ تیمی',dm:'دث‌مچ',gg:'Gun Game'};
 const HC=['#2f6fb3','#c2417e','#2fa8a0','#d97f2b','#8a5bd6','#c9b227','#7fb34a','#b3562f'];
 let NT=null;
 const fa=n=>n.toLocaleString('fa-IR'),send=(c,o)=>{try{c&&c.send(o)}catch(e){}};
 const eix=e=>M.E.indexOf(e),evp=(...a)=>{if(M&&M.mp&&!M.client)M.ev.push(a)};
 const cleanName=v=>String(v||'').replace(/[^\p{L}\p{N} _-]/gu,'').trim().slice(0,12)||'Player';
 const myName=()=>SESS?SESS.name:cleanName($('pn').value);
-const cusArr=()=>[CUS.w,CUS.skin,CUS.mag,CUS.scope,CUS.supp,CUS.grip];
-const cusObj=a=>{a=Array.isArray(a)?a:[];const n=(i,m)=>cl(a[i]|0,0,m);return{w:n(0,4),skin:n(1,SK.length-1),mag:n(2,1),scope:n(3,1),supp:n(4,1),grip:n(5,1)}};
+const cusArr=()=>[CUS.w,CUS.skin,CUS.mag,CUS.scope,CUS.supp,CUS.grip,CUS.p||0,CUS.g||['frag','smoke']];
+const cusObj=a=>{a=Array.isArray(a)?a:[];const n=(i,m)=>cl(a[i]|0,0,m);return{w:BIG.includes(a[0]|0)?a[0]|0:2,p:PIS.includes(a[6]|0)?a[6]|0:0,g:(Array.isArray(a[7])&&a[7].length==2?a[7]:['frag','smoke']).map(k=>['frag','smoke','fire'].includes(k)?k:'frag'),skin:n(1,SK.length-1),mag:n(2,1),scope:n(3,1),supp:n(4,1),grip:n(5,1)}};
 function mulb(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 try{$('pn').value=localStorage.getItem('flname')||('Player'+(10+Math.floor(Math.random()*90)))}catch(e){$('pn').value='Player'}
 $('pn').onchange=()=>{if(!SESS)try{localStorage.setItem('flname',myName())}catch(e){}};
 
 /* --- transports --- */
-function wrapConn(c){const w={onmsg:null,onclose:null,send(o){try{c.send(o)}catch(e){}},close(){try{c.close()}catch(e){}}};c.on('data',d=>w.onmsg&&w.onmsg(d));c.on('close',()=>w.onclose&&w.onclose());c.on('error',()=>w.onclose&&w.onclose());return w}
+function wrapConn(c){const w={onmsg:null,onclose:null,send(o){try{c.send(o)}catch(e){}},close(){try{c.close()}catch(e){}}};c.on('data',d=>w.onmsg&&w.onmsg(d));c.on('close',()=>w.onclose&&w.onclose());c.on('error',()=>{});return w}
 function wrapPeer(p){const n={id:p.id,onconn:null,q:[],
 connect(id,ms=4500){return new Promise((ok,no)=>{let d=0;const c=p.connect(id,{serialization:'json',reliable:true});
 const eh=e=>{if(e.type=='peer-unavailable'&&String(e.message||'').includes(id))fail('none')};
@@ -552,7 +561,7 @@ if(!h){if(m.t!='join')return;if(st.state!='lobby'||st.hs.length>=st.T){send(conn
 h={n:cleanName(m.n),cus:cusObj(m.c),conn};st.hs.push(h);if(st.cd<10)st.cd=10;send(conn,{t:'wel'});hostLob(st);return}
 if(m.t=='in'){const e=h.e;if(!e||!e.hum)return;const f=v=>Number.isFinite(+v)?+v:0;
 e.inp={ix:cl(f(m.ix),-1,1),iy:cl(f(m.iy),-1,1),sr:m.sr?1:0,sh:m.sh?1:0,a:(m.a==null||!Number.isFinite(+m.a))?null:+m.a};e.inT=performance.now();
-if(Array.isArray(m.q))for(const c of m.q.slice(0,6)){if(c[0]=='r')reload(e);else if(c[0]=='s')sw(e,cl(c[1]|0,0,WP.length-1))}}
+if(Array.isArray(m.q))for(const c of m.q.slice(0,6)){if(c[0]=='r')reload(e);else if(c[0]=='s')sw(e,cl(c[1]|0,0,WP.length-1));else if(c[0]=='g')throwG(e,cl(c[1]|0,0,1))}}
 else if(m.t=='bye')drop(h)};
 conn.onclose=()=>{if(h)drop(h)}};
 st.node.q.splice(0).forEach(st.node.onconn);
@@ -568,12 +577,12 @@ $('lobby').style.display='none'}
 function netTickHost(dt){const s=NT;if(!s||s.role!='host'||s.state!='play')return;M.snT+=dt;if(M.snT<1/15)return;M.snT=0;
 const r1=Math.round,r2=v=>Math.round(v*100)/100;
 const E=M.E.map(e=>[r1(e.x),r1(e.y),r2(e.a),Math.max(0,Math.ceil(e.hp)),e.alive?1:0,e.w,e.fl>0?1:0,e.sp>0?1:0,e.ht>0?1:0,e.k,e.d,e.lv,Math.ceil(e.ar),e.air>0?+e.air.toFixed(1):0]);
-const o={t:'s',E,sc:M.sc,ev:M.ev};M.ev=[];const z=M.z;
+const o={t:'s',E,sc:M.sc,ev:M.ev,gx:M.Fx.map(f=>[f.k=='s'?0:f.k=='f'?1:2,f.x|0,f.y|0,f.r,+f.t.toFixed(1)]),gg:M.Gr.map(q=>[q.x|0,q.y|0,q.k=='smoke'?0:q.k=='fire'?1:2])};M.ev=[];const z=M.z;
 if(z)o.z=[z.x,z.y,z.r,z.ph,z.t,z.sh,z.p,z.dur,z.tx,z.ty,z.tr].map(v=>Math.round(v*10)/10);
 M.sn++;if(M.L.length!==M.lLen||M.sn%45==0){o.L=M.L.map(l=>[l.x|0,l.y|0,l.t=='w'?0:l.t=='m'?1:2,l.i||0]);M.lLen=M.L.length}
 for(const e of M.E)if(e.hum&&e.conn){
 if(performance.now()-e.inT>15000){const h=s.hs.find(h=>h.e===e);if(h)s.drop(h);continue}
-o.me=[e.rl>0?+e.rl.toFixed(2):0,...e.am,e.have.reduce((a,h,i)=>a|(h?1<<i:0),0),Math.round(e.sta==null?100:e.sta),e.rt>0?+e.rt.toFixed(1):0];send(e.conn,o)}}
+o.me=[e.rl>0?+e.rl.toFixed(2):0,...e.am,e.have.reduce((a,h,i)=>a|(h?1<<i:0),0),Math.round(e.sta==null?100:e.sta),e.rt>0?+e.rt.toFixed(1):0,...(e.gr||[]).map(q=>q.n)];send(e.conn,o)}}
 
 /* --- client --- */
 function clientLobby(st){st.role='client';
@@ -596,8 +605,8 @@ s.E.forEach((r,i)=>{const e=m.E[i];if(!e)return;const own=e===p,wasA=e.alive;
 if(own){if(!e.l0)e.a=r[2];const dx=r[0]-e.x,dy=r[1]-e.y;if(!e.l0||!r[4]||!wasA||Math.hypot(dx,dy)>90){e.x=r[0];e.y=r[1]}else{e.x+=dx*.25;e.y+=dy*.25}if(e.hp>r[3]&&r[4])snd(80,.1,'square',.07)}
 else{e.tx=r[0];e.ty=r[1];e.ta=r[2];if(!e.l0||(!wasA&&r[4])){e.x=r[0];e.y=r[1];e.a=r[2]}}
 e.l0=1;e.hp=r[3];e.alive=r[4];e.w=r[5];if(r[6])e.fl=.06;e.sp=r[7];if(r[8])e.ht=.18;e.k=r[9];e.d=r[10];e.lv=r[11];e.ar=r[12];e.air=r[13]||0});
-if(s.me){const q=s.me;p.rl=q[0];const nw=WP.length;for(let i=0;i<nw;i++){p.am[i]=q[1+i];p.have[i]=(q[nw+1]>>i)&1}p.sta=q[nw+2];p.rt=q[nw+3]}
-m.sc=s.sc;
+if(s.me){const q=s.me;p.rl=q[0];const nw=WP.length;for(let i=0;i<nw;i++){p.am[i]=q[1+i];p.have[i]=(q[nw+1]>>i)&1}p.sta=q[nw+2];p.rt=q[nw+3];p.gr=(CUS.g||['frag','smoke']).map((k,i)=>({k,n:q[nw+4+i]||0}))}
+m.sc=s.sc;if(s.gx)m.Fx=s.gx.map(a=>({k:['s','f','e'][a[0]],x:a[1],y:a[2],r:a[3],t:a[4],s:m.t-1}));if(s.gg)m.Gr=s.gg.map(a=>({x:a[0],y:a[1],k:['smoke','fire','frag'][a[2]]}));
 if(s.z&&m.z){const z=m.z,q=s.z;z.x=q[0];z.y=q[1];z.r=q[2];z.ph=q[3];z.t=q[4];z.sh=q[5];z.p=q[6];z.dur=q[7];z.tx=q[8];z.ty=q[9];z.tr=q[10]}
 if(s.L)m.L=s.L.map(a=>({x:a[0],y:a[1],t:['w','m','a'][a[2]],i:a[3]}));
 for(const v of s.ev||[]){const k=v[0];
@@ -616,7 +625,7 @@ if(m.z&&!m.z.sh)m.z.t=Math.max(0,m.z.t-dt);
 const k=Math.min(1,dt*14);
 for(const e of m.E){e.fl-=dt;e.ht-=dt;if(e.air>0)e.air-=dt;if(e!==p&&e.tx!=null){e.x+=(e.tx-e.x)*k;e.y+=(e.ty-e.y)*k;let df=e.ta-e.a;df=Math.atan2(Math.sin(df),Math.cos(df));e.a+=df*k}}
 if(m.got&&p.alive)pl(p,dt,locInp());
-if(performance.now()-m.lastS>15000){menu('ارتباط با میزبان قطع شد.');return}
+if(performance.now()-m.lastS>25000){menu('ارتباط با میزبان قطع شد.');return}
 netTickClient(dt)}
 
 /* ===== account (Supabase Auth, REST) ===== */
@@ -636,12 +645,13 @@ return m||('خطای سرور ('+st+')')}
 async function sb(path,body,tok,meth){let r;
 try{r=await fetch(SB_URL+path,{method:meth||'POST',headers:{apikey:SB_KEY,'Content-Type':'application/json',...(tok?{Authorization:'Bearer '+tok}:{})},body:JSON.stringify(body||{})})}catch(e){throw new Error('اتصال به سرویس ثبت‌نام برقرار نشد.')}
 let j={};try{j=await r.json()}catch(e){}if(!r.ok)throw new Error(sbErr(j,r.status));return j}
-function setSess(j){const u=j.user||{},md=u.user_metadata||{};if(Array.isArray(md.kits)&&md.kits.length){KITS=md.kits.slice(0,3);while(KITS.length<3)KITS.push(null);try{localStorage.setItem('fl_kits',JSON.stringify(KITS))}catch(e){}}
+function setSess(j){const u=j.user||{},md=u.user_metadata||{};if(md.prof){PROF=Object.assign({xp:0,money:0,own:[]},md.prof);try{localStorage.setItem('fl_prof',JSON.stringify(PROF))}catch(e){}renderProf()}
+if(Array.isArray(md.kits)&&md.kits.length){KITS=md.kits.slice(0,3);while(KITS.length<3)KITS.push(null);try{localStorage.setItem('fl_kits',JSON.stringify(KITS))}catch(e){}}
 SESS={at:j.access_token,rt:j.refresh_token,exp:j.expires_at||(Math.floor(Date.now()/1000)+(j.expires_in||3600)),id:u.id,email:u.email,name:cleanName(md.username||String(u.email||'').split('@')[0])};saveS();renderAcc()}
-function renderAcc(){const a=$('acc');a.innerHTML='';
-if(SESS){const u=document.createElement('span');u.className='un';u.textContent='👤 '+SESS.name;const b=document.createElement('button');b.textContent='خروج';
-b.onclick=async()=>{const t=SESS&&SESS.at;SESS=null;saveS();renderAcc();try{await sb('/auth/v1/logout',{},t)}catch(e){}};a.append(u,b);$('pn').value=SESS.name;$('pn').readOnly=true}
-else{const b=document.createElement('button');b.textContent='ورود / ثبت‌نام';b.onclick=()=>openAuth('in');a.appendChild(b);$('pn').readOnly=false;try{$('pn').value=localStorage.getItem('flname')||$('pn').value}catch(e){}}}
+function renderAcc(){const a=$('acc');a.innerHTML='';const b=document.createElement('button');b.className='chip';
+if(SESS){const v=document.createElement('span');v.className='av';v.textContent=(SESS.name||'?')[0].toUpperCase();const n=document.createElement('span');n.className='nm';const t=document.createElement('b');t.textContent=SESS.name;const sm=document.createElement('small');sm.id='accSub';n.append(t,sm);b.append(v,n);b.onclick=openAcct;$('pn').value=SESS.name;$('pn').readOnly=true}
+else{b.textContent='ورود / ثبت‌نام';b.onclick=()=>openAuth('in');$('pn').readOnly=false;try{$('pn').value=localStorage.getItem('flname')||$('pn').value}catch(e){}}
+a.appendChild(b);renderProf()}
 async function sbInit(){renderAcc();if(SESS&&SESS.exp-Date.now()/1000<120){try{setSess(await sb('/auth/v1/token?grant_type=refresh_token',{refresh_token:SESS.rt}))}catch(e){if(!/اتصال/.test(e.message)){SESS=null;saveS();renderAcc()}}}}
 function openAuth(mode,note){AMODE=mode;$('aM').className='';$('aM').textContent=note||'';$('auth').style.display='flex';aTab()}
 function aTab(){$('tL').classList.toggle('on',AMODE=='in');$('tS').classList.toggle('on',AMODE=='up');$('aU').style.display=AMODE=='up'?'block':'none';$('aG').textContent=AMODE=='up'?'ثبت‌نام':'ورود';$('aP').autocomplete=AMODE=='up'?'new-password':'current-password'}
@@ -671,7 +681,7 @@ function pickMap(mode,online){const L=$('msL');L.innerHTML='';$('msT').textConte
 const items=(online?[{id:'any',n:'تصادفی',th:'urban',S:0}]:[]).concat(MAPS[mode]);
 for(const m of items){const b=document.createElement('button');b.className='mp';b.style.setProperty('--tc',m.id=='any'?'#2a3347':TC[m.th]);
 const n=document.createElement('b');n.textContent=m.n;const sm=document.createElement('small');sm.textContent=m.id=='any'?'میزبان انتخاب می‌کند':fa(m.S)+' × '+fa(m.S);b.append(n,sm);
-b.onclick=()=>{$('mapsel').style.display='none';online?requireAuth(()=>lobby(mode,m.id)):start(mode,{map:m.id})};L.appendChild(b)}
+b.onclick=()=>{$('mapsel').style.display='none';online?requireAuth(()=>kitPick(()=>lobby(mode,m.id))):start(mode,{map:m.id})};L.appendChild(b)}
 $('mapsel').style.display='flex'}
 $('msX').onclick=()=>$('mapsel').style.display='none';
 sbInit();
@@ -680,20 +690,41 @@ if(!matchMedia('(pointer:coarse)').matches){document.querySelector('#intro p').i
 let KITS=[null,null,null];try{const k=JSON.parse(localStorage.getItem('fl_kits')||'null');if(Array.isArray(k))KITS=k}catch(e){}
 const GN={frag:'Frag',smoke:'Smoke',fire:'Fire'};
 function saveKit(i){KITS[i]={p:CUS.p||0,w:CUS.w,g:[...(CUS.g||['frag','smoke'])]};try{localStorage.setItem('fl_kits',JSON.stringify(KITS))}catch(e){}save();if(SESS)sb('/auth/v1/user',{data:{kits:KITS}},SESS.at,'PUT').catch(()=>{})}
-function kitUI(edit){const row=(id,items,cur,set)=>{const L=$(id);L.innerHTML='';items.forEach(([n,v])=>{const b=document.createElement('button');b.textContent=n;if(cur()==v)b.className='on';b.onclick=()=>{set(v);save();kitUI(edit);pv()};L.appendChild(b)})};
+function kitUI(edit){const row=(id,items,cur,set)=>{const L=$(id);L.innerHTML='';items.forEach(([n,v])=>{const b=document.createElement('button');b.textContent=owned(v)?n:'🔒 '+n+' '+PRICE[v]+'$';if(cur()==v)b.className='on';b.onclick=()=>{if(!owned(v)){if(PROF.money<PRICE[v]){b.textContent='پول کافی نیست';return}PROF.money-=PRICE[v];PROF.own.push(v);saveProf()}set(v);save();kitUI(edit);pv()};L.appendChild(b)})};
 CUS.g=CUS.g||['frag','smoke'];if(!BIG.includes(CUS.w))CUS.w=2;
 const S=$('kS');S.innerHTML='';[0,1,2].forEach(i=>{const k=KITS[i],b=document.createElement('button');
 b.textContent=edit?'ذخیره در کیت '+(i+1)+(k?' ✓':''):(k?'کیت '+(i+1)+': '+WP[k.w].n+' + '+WP[k.p||0].n:'کیت '+(i+1)+' (خالی)');
-b.onclick=()=>{if(edit){saveKit(i);kitUI(edit)}else if(k){CUS.p=k.p||0;CUS.w=k.w;CUS.g=[...k.g];save();kitUI(edit);pv()}};S.appendChild(b)});
+b.onclick=()=>{if(edit){saveKit(i);kitUI(edit)}else if(k&&owned(k.p||0)&&owned(k.w)){CUS.p=k.p||0;CUS.w=k.w;CUS.g=[...k.g];save();kitUI(edit);pv()}};S.appendChild(b)});
 row('kP',PIS.map(i=>[WP[i].n,i]),()=>CUS.p||0,v=>CUS.p=v);row('kL',BIG.map(i=>[WP[i].n,i]),()=>CUS.w,v=>CUS.w=v);
 [0,1].forEach(si=>row('kG'+si,['frag','smoke','fire'].map(k=>[GN[k],k]),()=>CUS.g[si],v=>CUS.g[si]=v))}
 $('kb').onclick=()=>{kitUI(1);$('kH').textContent='ساخت کیت';$('kT').textContent='';$('kGo').style.display='none';$('kX').style.display='';$('kit').style.display='flex'};
 $('kX').onclick=()=>$('kit').style.display='none';
+let PROF={xp:0,money:0,own:[]};try{Object.assign(PROF,JSON.parse(localStorage.getItem('fl_prof')||'{}'))}catch(e){}
+const PRICE={5:300,6:500,7:800,8:1000,9:600,10:900},owned=i=>!PRICE[i]||PROF.own.includes(i),lvl=()=>1+Math.floor(Math.sqrt(PROF.xp/100));
+function saveProf(){try{localStorage.setItem('fl_prof',JSON.stringify(PROF))}catch(e){}if(SESS)sb('/auth/v1/user',{data:{prof:PROF}},SESS.at,'PUT').catch(()=>{});renderProf()}
+function renderProf(){const e=$('accSub');if(e)e.textContent='Lv '+fa(lvl())+' · 💰 '+fa(PROF.money)}
+function awardM(){if(!M||!M.p||M.awarded||M.mapId==null)return'';const w=M.fin||M.res,k=M.p.k||0;if(M.t<25&&!w)return'';M.awarded=1;const xp=k*20+(w&&w.won?100:25),cash=k*10+(w&&w.won?150:20);PROF.xp+=xp;PROF.money+=cash;saveProf();return'  (+'+fa(xp)+' XP · +'+fa(cash)+' 💰)'}
+renderProf();
+function kitPick(done){kitUI(0);$('kH').textContent='انتخاب کیت';$('kGo').style.display='';$('kX').style.display='none';let t=15;
+const go=()=>{clearInterval(KT);$('kit').style.display='none';if(!owned(CUS.w))CUS.w=2;if(!owned(CUS.p))CUS.p=0;save();done()};
+$('kT').textContent=t;$('kit').style.display='flex';clearInterval(KT);KT=setInterval(()=>{t--;$('kT').textContent=t;if(t<=0)go()},1000);$('kGo').onclick=go}
 const start0=start;let KT=0;
-start=function(mode,o){if(o&&(o.mp||o.client))return start0(mode,o);
-kitUI(0);$('kH').textContent='انتخاب کیت';$('kGo').style.display='';$('kX').style.display='none';let t=15;
-const go=()=>{clearInterval(KT);$('kit').style.display='none';start0(mode,o);if(mode=='br'&&M){const p=M.p;p.have[CUS.w]=1;p.am[CUS.w]=mm(p,CUS.w)}};
-$('kT').textContent=t;$('kit').style.display='flex';clearInterval(KT);KT=setInterval(()=>{t--;$('kT').textContent=t;if(t<=0)go()},1000);$('kGo').onclick=go};
+start=function(mode,o){if(o&&(o.mp||o.client))return start0(mode,o);kitPick(()=>start0(mode,o))};
+/* tabs / account page / shop */
+const tab=on=>{$('lOn').style.display=on?'':'none';$('lOf').style.display=on?'none':'';$('tOn').className=on?'on':'';$('tOf').className=on?'':'on'};
+$('tOn').onclick=()=>tab(1);$('tOf').onclick=()=>tab(0);
+function openAcct(){if(!SESS)return openAuth('in');const l=lvl(),b=100*l*l;$('aN').textContent=SESS.name;$('aE2').textContent=SESS.email||'';
+$('aL').textContent='Lv '+fa(l)+' · '+fa(PROF.xp)+' / '+fa(b)+' XP · 💰 '+fa(PROF.money);
+$('aK').textContent='کیت‌های ذخیره‌شده: '+fa(KITS.filter(Boolean).length)+' از ۳ · تفنگ‌های خریده‌شده: '+fa(PROF.own.length);$('acct').style.display='flex'}
+$('aC').onclick=()=>$('acct').style.display='none';
+$('aS').onclick=()=>{$('acct').style.display='none';openShop()};
+$('aO').onclick=async()=>{const t=SESS&&SESS.at;SESS=null;saveS();renderAcc();$('acct').style.display='none';try{await sb('/auth/v1/logout',{},t)}catch(e){}};
+$('shb').onclick=openShop;$('shX').onclick=()=>$('shop').style.display='none';
+function openShop(){const L=$('shL');L.innerHTML='';$('shM').textContent='💰 '+fa(PROF.money);
+for(const k of Object.keys(PRICE)){const i=+k,w=WP[i],d=document.createElement('div');d.className='si';const t=document.createElement('span');t.textContent=w.n+(PIS.includes(i)?' (پیستول)':' (تفنگ بزرگ)');
+const sm=document.createElement('small');sm.textContent='آسیب '+w.d+(w.p>1?'×'+w.p:'')+' · خشاب '+w.m;t.appendChild(sm);const b=document.createElement('button');
+if(owned(i)){b.textContent='دارید ✓';b.disabled=true}else{b.textContent=fa(PRICE[i])+' 💰';b.onclick=()=>{if(PROF.money<PRICE[i]){b.textContent='پول کافی نیست';return}PROF.money-=PRICE[i];PROF.own.push(i);saveProf();openShop()}}
+d.append(t,b);L.appendChild(d)}$('shop').style.display='flex'}
 /* fullscreen */
 (function(){const de=document.documentElement,b=document.getElementById('fsb'),it=document.getElementById('intro');
 const isFs=()=>document.fullscreenElement||document.webkitFullscreenElement;
